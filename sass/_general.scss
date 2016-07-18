@@ -5,8 +5,19 @@ h1 {
 }
 
 h2 {
-	@include awesomeColor(#673ab7);
+	@include awesomeColor(grey);
 	font-size:90px;
 	
 }
 
+h3 {
+	@include awesomeColor(green);
+	font-size:90px;
+	
+}
+
+h4 {
+	@include awesomeColor(green);
+	font-size:90px;
+	
+}
