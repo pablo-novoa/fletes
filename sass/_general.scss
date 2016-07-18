@@ -1,5 +1,12 @@
 h1 {
-	color:blue;
+	@include awesomeColor(#0ff);
 	font-size:90px;
 	
 }
+
+h2 {
+	@include awesomeColor(#673ab7);
+	font-size:90px;
+	
+}
+
