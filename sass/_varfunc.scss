@@ -1,4 +1,43 @@
-@mixin awesomeColor($color) {
-  color:darken($color, 10%);
-  background-color: rgba($color, 0.5);
+// @mixin awesomeColor($color) {
+//   color:darken($color, 10%);
+//   background-color: rgba($color, 0.5);
+// }
+
+// @mixin commonText($sizetext) {
+//   font-size:$sizetext!important;
+// }
+
+// @mixin large-text {
+//   font: {
+//     family:$font-family-sans-serif;
+//     size: 20px;
+//     weight: bold;
+//   }
+//   color: #ff0000;
+// }
+
+
+
+//new variables-------------///
+$logo-font:  "Montserrat", Helvetica, Arial, sans-serif !default;
+
+
+//new functions-------------///
+@mixin logo-brand {
+  font: {
+    family:$logo-font;
+    weight:400;
+    size:30px;
+  }
+  &:hover {
+    color: white;
+  }
+  color:$gray-lighter;
+  span {
+  	font: {
+  		weight:700;
+  	}
+  }
 }
+
+

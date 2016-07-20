@@ -1,0 +1,7 @@
+.navbar-default {
+	background:$brand-primary;
+}
+
+.navbar-default .navbar-brand {
+	@include logo-brand;
+}

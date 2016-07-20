@@ -1,1 +1,4 @@
-/*rewrite bootstrap's vars*/
+/*rewrite bootstrap's vars-------*/
+
+$font-family-sans-serif:  "Work Sans", Helvetica, Arial, sans-serif !default;/*change bootstrap default font*/
+$brand-primary: darken(#fd5621, 1%) !default;/*new primary color*/

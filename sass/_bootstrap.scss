@@ -21,17 +21,19 @@
 @import "bootstrap/code";
 @import "bootstrap/grid";
 //@import "bootstrap/tables";
-//@import "bootstrap/forms";
 @import "bootstrap/buttons";
+@import "bootstrap/forms";
 
-// Components
+
+// @import "font-awesome/scss/font-awesome";
+// Components ---------------------*/
+@import "bootstrap/dropdowns";
+@import "bootstrap/navbar";
 /*
 @import "bootstrap/component-animations";
-@import "bootstrap/dropdowns";
 @import "bootstrap/button-groups";
 @import "bootstrap/input-groups";
 @import "bootstrap/navs";
-@import "bootstrap/navbar";
 @import "bootstrap/breadcrumbs";
 @import "bootstrap/pagination";
 @import "bootstrap/pager";
@@ -56,6 +58,9 @@
 @import "bootstrap/popovers";
 @import "bootstrap/carousel";
 */
+
+// FontAwesome (Icon fonts for Bootstrap)
+//@import "font-awesome/scss/font-awesome";
 
 // Utility classes
 @import "bootstrap/utilities";
