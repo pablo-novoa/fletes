@@ -3,23 +3,11 @@
 //   background-color: rgba($color, 0.5);
 // }
 
-// @mixin commonText($sizetext) {
-//   font-size:$sizetext!important;
-// }
-
-// @mixin large-text {
-//   font: {
-//     family:$font-family-sans-serif;
-//     size: 20px;
-//     weight: bold;
-//   }
-//   color: #ff0000;
-// }
-
-
 
 //new variables-------------///
-$logo-font:  "Montserrat", Helvetica, Arial, sans-serif !default;
+$logo-font: "Montserrat", Helvetica, Arial, sans-serif !default;
+$line-height-nav: 50px !default; // 20/14
+$nav-padding-vertical: (($navbar-height - $line-height-nav) / 2) !default;
 
 
 //new functions-------------///
@@ -41,3 +29,29 @@ $logo-font:  "Montserrat", Helvetica, Arial, sans-serif !default;
 }
 
 
+
+@mixin navbar-links {
+  margin:0;
+    &>li {
+      padding:$nav-padding-vertical $navbar-padding-horizontal;
+      list-style:none;
+    }
+
+    & > li > i,
+    & > li > a > i {
+      color:$gray-lighter;
+      font: {
+        size:40px;
+      }
+      line-height:$line-height-nav;
+    }
+}
+
+
+
+@mixin navbar-shadow {
+  box-shadow: 0px 0px 3px 2px #8d8b8b;
+    -moz-box-shadow: 0px 0px 3px 2px #8d8b8b;
+    -ms-box-shadow: 0px 0px 3px 2px #8d8b8b;
+    -webkit-box-shadow: 0px 0px 3px 2px #8d8b8b;
+}

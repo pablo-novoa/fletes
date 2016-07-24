@@ -5,3 +5,17 @@
 .navbar-default .navbar-brand {
 	@include logo-brand;
 }
+
+.dropdown-toggle {
+  
+}
+
+.navbar-links {
+  	@include navbar-links;
+}
+
+
+.navbar-default {
+  	border:none;
+  	@include navbar-shadow; 
+}

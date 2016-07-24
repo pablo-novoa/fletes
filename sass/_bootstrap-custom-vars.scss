@@ -1,4 +1,17 @@
 /*rewrite bootstrap's vars-------*/
 
+/*fonts vars-------*/
 $font-family-sans-serif:  "Work Sans", Helvetica, Arial, sans-serif !default;/*change bootstrap default font*/
-$brand-primary: darken(#fd5621, 1%) !default;/*new primary color*/
+$font-size-base: 17px !default;
+
+/*colors vars-------*/
+$brand-primary: darken(#039be5, 1%) !default;
+
+
+
+/*miscellaneous-------*/
+$navbar-height:80px !default;
+
+
+/*responsive-------*/
+
