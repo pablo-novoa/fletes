@@ -2,16 +2,22 @@
 
 /*fonts vars-------*/
 $font-family-sans-serif:  "Work Sans", Helvetica, Arial, sans-serif !default;/*change bootstrap default font*/
-$font-size-base: 17px !default;
+$font-size-base: 16px !default;
+$font-size-large: ceil(($font-size-base * 1.30)) !default; // ~18px
 
 /*colors vars-------*/
 $brand-primary: darken(#039be5, 1%) !default;
-
+$btn-default-bg: #0398e0 !default;
+$btn-default-color: #fff !default;
+$btn-default-border: #0398e0 !default;
 
 
 /*miscellaneous-------*/
 $navbar-height:80px !default;
 
+$border-radius-large: 5px !default;
+$border-radius-base:  4px !default;
+$border-radius-small: 3px !default;
 
 /*responsive-------*/
 

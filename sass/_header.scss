@@ -6,16 +6,28 @@
 	@include logo-brand;
 }
 
-.dropdown-toggle {
-  
+.main_navbar {
+  	@include main-navbar;
 }
 
 .navbar-links {
   	@include navbar-links;
 }
 
-
 .navbar-default {
   	border:none;
   	@include navbar-shadow; 
+}
+
+#search_input {
+ 	@include search-input-header; 
+}
+
+
+.bkg_header {
+	@include bkg-header; 
+}
+
+.btn_circle {
+	@include btn-circle;
 }

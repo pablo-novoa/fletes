@@ -1,0 +1,20 @@
+html, body {
+	background:$gray-lighter;
+}
+
+// Utilities
+.block {
+  display: block !important;
+}
+
+.box_item {
+	@include box-item-info;
+}
+
+.star_rate {
+	@include star-rate;
+}
+
+.item_price {
+	@include item-price;
+}

@@ -4,13 +4,122 @@
 // }
 
 
-//new variables-------------///
+//NEW VARIABLES-------------///
 $logo-font: "Montserrat", Helvetica, Arial, sans-serif !default;
 $line-height-nav: 50px !default; // 20/14
 $nav-padding-vertical: (($navbar-height - $line-height-nav) / 2) !default;
+$background-transparent: transparent;
+$navbar-icon-size: 40px;
+$color-white: #ffffff;
+$height-items-filter: 60px;
 
 
-//new functions-------------///
+@mixin circle($size) {
+     width: $size;
+     height: $size;
+     border-radius: 100%;
+}
+
+@mixin font-weight($weight) {
+  $weights: (
+    light: 300,
+    normal: 400,
+    medium: 500,
+    bold: 700,
+    heavy: 800,
+    black: 900
+  );
+  
+  $output: $weight;
+  @if map-has-key($weights, $weight) {
+      $output: map-get($weights, $weight);
+  }
+  
+  font-weight: $output;
+}
+
+
+
+
+
+//NEW FUNCTIONS-------------///
+
+//vertical center mixins-------------///
+@mixin center-vert($size){
+  margin: calc(50vh - #{$size / 2}) auto;
+  height: $size;
+  line-height: $size;
+}
+
+@mixin center-vert-position {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+@mixin center-both-position {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+//box-shadow mixins-------------///
+@mixin navbar-shadow {
+  box-shadow:0px 0px 10px 2px #242120;
+    -moz-box-shadow:0px 0px 10px 2px #242120;
+    -ms-box-shadow:0px 0px 10px 2px #242120;
+    -webkit-box-shadow:0px 0px 10px 2px #242120;
+}
+
+@mixin article-shadow {
+  box-shadow: 1px 1px 3px 1px rgba(186, 186, 186, 0.5);
+    -moz-box-shadow: 1px 1px 3px 1px rgba(186, 186, 186, 0.5);
+    -ms-box-shadow: 1px 1px 3px 1px rgba(186, 186, 186, 0.5);
+    -webkit-box-shadow: 1px 1px 3px 1px rgba(186, 186, 186, 0.5);
+}
+
+
+@mixin color-placeholder($color) {
+  input::-webkit-input-placeholder {
+     color: $color;
+  }
+  /* Firefox 18- */
+  input:-moz-placeholder { 
+    color: $color;  
+  }
+   /* Firefox 19+ */
+  input::-moz-placeholder { 
+    color: $color;  
+  }
+  input:-ms-input-placeholder {  
+    color: $color;  
+  }
+}
+
+
+@mixin btn-circle {
+  color:$color-white;
+  background:$brand-primary;
+  padding:0;
+  position:relative;
+  @include circle(45px);
+  @include article-shadow;
+
+  & i {
+    @include font-weight(bold);
+    @include center-both-position;
+  }
+}
+
+
+
+
+///-------------------------------------------------///
+
+
+/*miscellaneous-------*/
 @mixin logo-brand {
   font: {
     family:$logo-font;
@@ -22,12 +131,11 @@ $nav-padding-vertical: (($navbar-height - $line-height-nav) / 2) !default;
   }
   color:$gray-lighter;
   span {
-  	font: {
-  		weight:700;
-  	}
+    font: {
+      weight:700;
+    }
   }
 }
-
 
 
 @mixin navbar-links {
@@ -39,19 +147,199 @@ $nav-padding-vertical: (($navbar-height - $line-height-nav) / 2) !default;
 
     & > li > i,
     & > li > a > i {
-      color:$gray-lighter;
-      font: {
-        size:40px;
-      }
       line-height:$line-height-nav;
+    }
+
+    & .dropdown-menu i {
+      color:$brand-primary;
+      font-size: 25px;
+      vertical-align: bottom;
+    }
+
+    & .dropdown-menu .divider {
+      margin:7px 0;
+    }
+}
+
+
+@mixin main-navbar-icon {
+  color:$gray-lighter;
+  font-size:$navbar-icon-size;
+}
+
+
+
+
+@mixin main-navbar {
+  margin-bottom:0;
+
+  & i {
+    @include main-navbar-icon;
+  }
+}
+
+
+
+
+@mixin search-input-header {
+  margin:0;
+  width: 100%;
+  float:none;
+  @include color-placeholder(#ffffff);
+
+  & input {
+    border: 1px solid #ffffff;
+    background-color: $background-transparent;
+    height:$height-items-filter;
+    padding-left: 20px;
+    font-size:$font-size-large;
+    color:#ffffff;
+  }
+
+  & .input-group-addon {
+    position:absolute;
+    right:0;
+    z-index: 5;
+    background-color: $background-transparent;
+    padding:0;
+    border:none;
+    cursor: pointer;
+    display:block;
+    height: 100%;
+    width: 70px;
+    @include center-vert-position;
+  }
+
+  & .input-group-addon i {
+    border:none;
+    color:$color-white;
+    font-size:calc(#{$navbar-icon-size / 1.4});
+    @include center-both-position;
+  }
+}
+
+
+
+
+
+@mixin bkg-header {
+  background:url(images/bkg-main.jpg);
+  height: 400px;
+  margin-bottom:70px;
+  position:relative;
+
+    & .cont_filter {
+      margin-top:calc(25% - 175px);
+    }
+
+    & .cont_filter .btn-default {
+      height:$height-items-filter;
+      font-size:$font-size-large;
+      padding: 15px;
+    }
+
+    &  h1, h2 {
+      margin:0;
+    }
+
+    & .cont_filter .main_tittle {
+      font-size:calc(1.7 * #{$font-size-large});
+      margin-bottom:10px;
+      color:$color-white;
+      @include font-weight(bold);
+    }
+
+    & .cont_filter .main_subtittle {
+      font-size:calc(1.1 * #{$font-size-large});
+      color:$color-white;
+      margin-bottom: 43px;
     }
 }
 
 
 
-@mixin navbar-shadow {
-  box-shadow: 0px 0px 3px 2px #8d8b8b;
-    -moz-box-shadow: 0px 0px 3px 2px #8d8b8b;
-    -ms-box-shadow: 0px 0px 3px 2px #8d8b8b;
-    -webkit-box-shadow: 0px 0px 3px 2px #8d8b8b;
+
+
+@mixin box-item-info {
+  background:$color-white;
+  padding:25px 30px;
+  margin-bottom:20px;
+  border-radius:$border-radius-base;
+  @include article-shadow;
+  
+  & .title_info, p {
+    margin:0;
+    color:#6b6b6b;
+    font-size:$font-size-base;
+    margin-bottom: 15px;
+  }
+
+  & .title_info {
+    font-size:$font-size-large;
+    @include font-weight(bold);
+  }
+
+  & figure {
+    width: 14%;
+    margin-right: 3%;
+  }
+
+  & .box_item_info {
+    width: 83%;
+  }
+
+  & .box_item_info .pull-left {
+    width:70%;
+  }
+
+  & .box_item_info .pull-left i {
+    vertical-align: bottom;
+    font-size:calc(#{$navbar-icon-size / 1.7});
+  }
+}
+
+
+
+@mixin star-rate {
+  width: 23px;
+  & i {
+    color:#fdc006;
+    display:block;
+    font-size:27px;
+  }
+  
+}
+
+
+
+@mixin item-price {
+  font-size:calc(1.5 * #{$font-size-large});
+  @include font-weight(medium);
+  color:$brand-primary;
+
+  & span {
+    font-size:calc(.8 * #{$font-size-large});
+  }
+}
+
+
+@mixin footer-style {
+  color:$gray-light;
+  margin:100px 0 40px 0;
+
+  & .list_group li {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom:10px;
+  }
+  
+  & .list_group a {
+    color:$gray-darker;
+  }
+
+  & span {
+    color:$gray;
+    font-size:$font-size-small;
+    display:inline-block;
+  }
 }
