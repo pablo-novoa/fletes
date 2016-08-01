@@ -12,14 +12,21 @@ $background-transparent: transparent;
 $navbar-icon-size: 40px;
 $color-white: #ffffff;
 $height-items-filter: 60px;
+$gray-dark: #6b6b6b;   // #6b6b6b
 
 
+
+//NEW FUNCTIONS-------------///
+
+//Circle mixins-------------///
 @mixin circle($size) {
      width: $size;
      height: $size;
      border-radius: 100%;
 }
 
+
+//Font weight mixins-------------///
 @mixin font-weight($weight) {
   $weights: (
     light: 300,
@@ -39,12 +46,7 @@ $height-items-filter: 60px;
 }
 
 
-
-
-
-//NEW FUNCTIONS-------------///
-
-//vertical center mixins-------------///
+//Vertical center mixins-------------///
 @mixin center-vert($size){
   margin: calc(50vh - #{$size / 2}) auto;
   height: $size;
@@ -100,16 +102,24 @@ $height-items-filter: 60px;
 
 
 @mixin btn-circle {
-  color:$color-white;
   background:$brand-primary;
   padding:0;
   position:relative;
-  @include circle(45px);
+  @include circle(50px);
   @include article-shadow;
 
   & i {
+    color:$color-white;
     @include font-weight(bold);
     @include center-both-position;
+  }
+
+  &.circle_sm {
+    @include circle(30px);
+  }
+
+  &.circle_sm i {
+    font-size:19px;
   }
 }
 
@@ -269,7 +279,7 @@ $height-items-filter: 60px;
   
   & .title_info, p {
     margin:0;
-    color:#6b6b6b;
+    color:$gray-dark;
     font-size:$font-size-base;
     margin-bottom: 15px;
   }
@@ -286,6 +296,7 @@ $height-items-filter: 60px;
 
   & .box_item_info {
     width: 83%;
+    position:relative;
   }
 
   & .box_item_info .pull-left {
@@ -296,12 +307,24 @@ $height-items-filter: 60px;
     vertical-align: bottom;
     font-size:calc(#{$navbar-icon-size / 1.7});
   }
+
+  & .list-inline,
+  & .list-inline li {
+    padding:0;
+    margin:0;
+  }
 }
 
 
 
 @mixin star-rate {
   width: 23px;
+  vertical-align:top;
+
+  &.star_muted i {
+    color:$gray;
+  }
+
   & i {
     color:#fdc006;
     display:block;
@@ -341,5 +364,27 @@ $height-items-filter: 60px;
     color:$gray;
     font-size:$font-size-small;
     display:inline-block;
+  }
+}
+
+
+@mixin box-item-car {
+  background:$color-white;
+  padding:15px 15px;
+  margin-bottom:10px;
+  border-radius:$border-radius-base;
+  border: 1px solid #d4d4d4;
+ 
+  & p {
+    margin:0;
+  }
+
+  & span {
+    margin-bottom:8px;
+    font-size:$font-size-base;
+  }
+
+  & i {
+    font-size:calc(#{$navbar-icon-size / 1.7});
   }
 }
