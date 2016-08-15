@@ -417,14 +417,14 @@ $gray-dark: #6b6b6b;   // #6b6b6b
 
 
 @mixin title-reserve {
-  @include title-type(28px, #0398e0, 700, 30px);
+  @include title-type(30px, #0398e0, 700, 30px);
 
   i, span {
     vertical-align: middle;
   }
 
   i {
-    @include title-type(38px, #0398e0, 0, 0);
+    @include title-type(40px, #0398e0, 0, 0);
   }
 
 }

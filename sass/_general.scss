@@ -97,7 +97,8 @@ i {
 
 .comment_user {
 	@include input-type(65px);
-	@include element-gap(margin-bottom, 15px); @include element-gap(padding-top, calc(65px / 3));
+	@include element-gap(margin-bottom, 15px); 
+	@include element-gap(padding-top, calc(65px / 4));
 	@include title-type(18px, #6b6b6b, 400, 0px);
 	min-height:160px;
 }
@@ -114,11 +115,12 @@ i {
 .date_form label,
 .date_form label.inline_label {
     @include element-gap(padding-top, 15px);
-    @include title-type(22px, #6b6b6b, 600, 0px);
+    @include title-type(22px, #6b6b6b, 600, 10px);
 }
 
 #datepickerContainer {
     border: 1px solid #cccccc;
     padding: 15px;
     border-radius: 4px;
+    @include element-gap(margin-bottom, 20px);
 }
