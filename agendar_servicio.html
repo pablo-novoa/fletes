@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>fleteswebapp_dev_v1</title>
+	<meta charset="utf8" />  
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	<!-- CSS -->
+	<!-- styles compilator -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<!--JS -->
+	<!-- jquery -->
+	<!--<script src="https://code.jquery.com/jquery-3.1.0.slim.js" integrity="sha256-L6ppAjL6jgtRmfiuigeEE5AwNI2pH/X9IBbPyanJeZw=" crossorigin="anonymous"></script>-->
+	<!--<script type="text/javascript" src="js/jquery-3.1.0.js"></script>-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<!-- functions -->
+	<script type="text/javascript" src="js/scripts.js"></script>
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<!-- Plug in Daterpicker -->
+	<link rel="stylesheet" href="plugins/datepicker/css/bootstrap-datetimepicker.css" />
+	<script type="text/javascript" src="plugins/datepicker/js/bootstrap-datetimepicker.js"></script>
+	<script type="text/javascript" src="plugins/datepicker/js/bootstrap-datetimepicker.es.js"></script>
+
+</head>
+<body>
+
+<nav></nav>
+<!-- Navbar header -->
+<nav class="main_navbar navbar navbar-default navbar-static-top header_space" role="navigation">
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="container">
+				<div class="row">
+					<div class="navbar-header">
+			   			<a class="navbar-brand" href="index.html"> Flete<span>Facil</span>.com</a>
+					</div>
+				
+					<div class="navbar-links navbar-right">
+						<ul class="nav navbar-links navbar-right list-inline">
+							<li>
+								<a href="#">
+									<i class="material-icons">&#xE15E;</i>
+								</a>
+							</li>
+			   				<li class="dropdown">
+			   				    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+			   				       	<i class="material-icons">&#xE7FD;</i>
+			   				    </a>
+			   				    <ul class="dropdown-menu dropdown-user">
+			   				        <li>
+			   				        	<a href="#"><i class="material-icons">&#xE7FD;</i> Iniciar sesion</a>
+			   				        </li>
+			   				        <li class="divider"></li>
+			   				        <li>
+			   				        	<a href="#"><i class="material-icons">&#xE7FE;</i> Registrarse</a>
+			   				    	</li>
+			   				    </ul>
+			   				</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</nav> 
+<!-- / Navbar header -->
+
+<!-- Main container -->
+<section class="container">
+	<div class="row">
+		<article class="box_item box_date clearfix">
+			<h3 class="title_reserve element_gap"><i class="material-icons">&#xE916;</i> <span>Agendar viaje</span></h3>
+
+			<form class="date_form">
+  				<div class="form-group row clearfix">
+  				  	<label class="col-md-2 inline_label block" for="exampleInputEmail3">Origen:</label>
+  				  	<div class="col-md-10">
+  				  		<input type="email" class="input_lg form-control" id="exampleInputEmail3" placeholder="Email">
+  					</div>
+  				</div>
+  				<div class="form-group row clearfix">
+  				  <label class="col-md-2 inline_label  pull-left block" for="exampleInputPassword3">Destino:</label>
+  				  <div class="col-md-10">
+  				  	<input type="password" class="input_lg form-control pull-right" id="exampleInputPassword3" placeholder="Password">
+  				  </div>
+  				</div>
+  				<div class="form-group clearfix">
+  					<label class="element_gap pull-left block" for="exampleInputEmail3">Descripcion de la carga:</label>
+					<textarea class="element_gap comment_user form-control" placeholder="Entre 8 y 10 electrodomesticos, muebles varios, bolsos y mochilas?"></textarea>
+				</div>
+
+				<div class="affix_container">
+					<div id="datepickerContainer"></div>
+				</div>
+			</form>
+		</article>
+	</div>
+	<footer class="footer text-center">
+		<ul class="list_group list-inline">
+			<li><a href="#">Politicas de privacidad</a></li>
+			<li><a href="#">Preguntas Frecuentes</a></li>
+			<li><a href="#">Como pagar </a></li>
+			<li><a href="#">Condiciones del servicio</a></li>
+		</ul>
+		<span>GoMoveUy.com / All rights reserved - Todos los de rechos reservados</span>
+	</footer>
+</section>
+<!-- / Main container -->
+
+
+<script type="text/javascript">
+
+    $('#datepickerContainer').datetimepicker({
+        language:  'es',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		minView: 2,
+		forceParse: 0
+    });
+  
+</script>           
+
+
+
+
+
+</body>
+</html>

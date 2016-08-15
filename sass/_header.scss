@@ -2,6 +2,10 @@
 	background:$brand-primary;
 }
 
+.header_space {
+	margin-bottom: 80px!important;
+}
+
 .navbar-default .navbar-brand {
 	@include logo-brand;
 }
@@ -16,7 +20,7 @@
 
 .navbar-default {
   	border:none;
-  	@include navbar-shadow; 
+  	@include box-shadow(0px, 0px, 5px, 1px, #474747); 
 }
 
 #search_input {

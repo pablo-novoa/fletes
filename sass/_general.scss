@@ -20,12 +20,22 @@ i {
 	@include box-item-info;
 }
 
+.box_item.box_date {
+	padding:50px 70px;
+}
+
+    
+
 .star_rate {
 	@include star-rate;
 }
 
 .item_price {
 	@include item-price;
+}
+
+.affix_container {
+	position:relative;
 }
 
 .affix_btn_circle {
@@ -38,19 +48,77 @@ i {
 	@include btn-circle;
 }
 
-.box_item_car {
-	@include box-item-car;
-}
+// .box_item_car {
+// 	@include box-item-car;
+// }
 
 .title_sm {
-	@include font-weight(bold);
+	@include title-type(17px, #6b6b6b, 400, 0);
+	@include element-gap(margin-bottom, 12px);
 }
 
 .box_item_comments {
 	border-bottom: 1px solid #d4d4d4;
 	margin-bottom: 15px;
+	margin-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 // .box_item_comments:last-child {
 // 	border-bottom:none;
 // }
+
+
+.peon_cont.element_gap {
+	@include element-gap(margin-bottom, 15px);
+}
+
+.reviews_cont.element_gap {
+	@include element-gap(margin-bottom, 25px);
+}
+
+
+.subtitle_content {
+	@include title-type(18px, #6b6b6b, 500, 10px);
+}
+
+.title_item { 
+	@include title-type(18px, #6b6b6b, 500, 10px);
+}
+
+.title_reserve {
+	@include title-reserve;
+	text-transform:uppercase;
+}
+
+.title_reserve.element_gap {
+	@include element-gap(margin-bottom, 55px)
+}
+
+.comment_user {
+	@include input-type(65px);
+	@include element-gap(margin-bottom, 15px); @include element-gap(padding-top, calc(65px / 3));
+	@include title-type(18px, #6b6b6b, 400, 0px);
+	min-height:160px;
+}
+
+.input_lg {
+	@include input-type(55px);
+}
+
+.date_form input,
+.date_form textarea {	
+	@include title-type(20px, #6b6b6b, 400, 0px);
+}
+
+.date_form label,
+.date_form label.inline_label {
+    @include element-gap(padding-top, 15px);
+    @include title-type(22px, #6b6b6b, 600, 0px);
+}
+
+#datepickerContainer {
+    border: 1px solid #cccccc;
+    padding: 15px;
+    border-radius: 4px;
+}
