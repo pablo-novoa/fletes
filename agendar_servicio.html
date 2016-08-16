@@ -85,31 +85,42 @@
 		<article class="box_item box_date clearfix">
 			<h3 class="title_reserve element_gap"><i class="material-icons">&#xE916;</i> <span>Agendar viaje</span></h3>
 
-			<form class="date_form">
-  				<div class="form-group row clearfix">
-  				  	<label class="col-md-2 inline_label block" for="exampleInputEmail3">Origen:</label>
-  				  	<div class="col-md-10">
-  				  		<input type="email" class="input_lg form-control" id="exampleInputEmail3" placeholder="Email">
-  					</div>
+			<form class="date_form form-inline">
+				<div class="row clearfix">
+	  				<div class="form-group col-md-6">
+	  				  	<label class="inline_label block" for="exampleInputEmail3">Origen:</label>
+	  				  	<input type="email" class="input_lg form-control" id="exampleInputEmail3" placeholder="Email">
+	  				</div>
+	  				<div class="form-group col-md-6">
+	  				   <label class="inline_label block" for="exampleInputPassword3">Destino:</label>
+	  				   <input type="password" class="input_lg form-control" id="exampleInputPassword3" placeholder="Password">
+	  				</div>
+	  				<div class="form-group col-md-12">
+	  					<label class="element_gap block" for="exampleInputEmail3">Descripcion de la carga:</label>
+						<textarea class="element_gap comment_user form-control" placeholder="Entre 8 y 10 electrodomesticos, muebles varios, bolsos y mochilas?"></textarea>
+					</div>
   				</div>
-  				<div class="form-group row clearfix">
-  				  <label class="col-md-2 inline_label  pull-left block" for="exampleInputPassword3">Destino:</label>
-  				  <div class="col-md-10">
-  				  	<input type="password" class="input_lg form-control pull-right" id="exampleInputPassword3" placeholder="Password">
-  				  </div>
-  				</div>
-  				<div class="form-group clearfix">
-  					<label class="element_gap pull-left block" for="exampleInputEmail3">Descripcion de la carga:</label>
-					<textarea class="element_gap comment_user form-control" placeholder="Entre 8 y 10 electrodomesticos, muebles varios, bolsos y mochilas?"></textarea>
-				</div>
 
 				<div class="affix_container">
 					<div id="datepickerContainer"></div>
 				</div>
-				<div class="pull-right">
-					<a href="#" class="btn btn_circle block">
-						<i class="material-icons">&#xE876;</i>
-					</a>
+				<div class="row">
+					<div class="col-md-6">
+						<form class="form-inline">
+							<div class="form-group">
+		  				   		<label class="inline_label" for="exampleInputPassword3">Hora:</label>
+		  				   		<select name="destino" id="destino" class="form-control input_lg">
+	                            	<option value="">Casa</option>
+	                            	<option value="">Apartamento</option>
+	                          	</select>
+		  					</div>
+	  					</form>
+					</div>
+					<div class="col-md-6 clearfix">
+						<a href="#" class="btn btn_circle block pull-right">
+							<i class="material-icons">&#xE876;</i>
+						</a>
+					</div>
 				</div>
 			</form>
 		</article>
@@ -126,9 +137,8 @@
 </section>
 <!-- / Main container -->
 
-
+<!-- Datepicker init function -->
 <script type="text/javascript">
-
     $('#datepickerContainer').datetimepicker({
         language:  'es',
         weekStart: 1,
@@ -139,12 +149,7 @@
 		minView: 2,
 		forceParse: 0
     });
-  
 </script>           
-
-
-
-
 
 </body>
 </html>

@@ -4067,9 +4067,52 @@ select[multiple].input-lg,
   color: #444;
 }
 
+/* line 10, sass/bootstrap/_component-animations.scss */
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear;
+  -o-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+}
+/* line 13, sass/bootstrap/_component-animations.scss */
+.fade.in {
+  opacity: 1;
+}
+
+/* line 18, sass/bootstrap/_component-animations.scss */
+.collapse {
+  display: none;
+}
+/* line 21, sass/bootstrap/_component-animations.scss */
+.collapse.in {
+  display: block;
+}
+
+/* line 26, sass/bootstrap/_component-animations.scss */
+tr.collapse.in {
+  display: table-row;
+}
+
+/* line 28, sass/bootstrap/_component-animations.scss */
+tbody.collapse.in {
+  display: table-row-group;
+}
+
+/* line 30, sass/bootstrap/_component-animations.scss */
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition-property: height, visibility;
+  transition-property: height, visibility;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -webkit-transition-timing-function: ease;
+  transition-timing-function: ease;
+}
+
 /*
-@import "bootstrap/component-animations";
-@import "bootstrap/button-groups";
+s@import "bootstrap/button-groups";
 @import "bootstrap/navs";
 @import "bootstrap/breadcrumbs";
 @import "bootstrap/pagination";
@@ -4472,11 +4515,18 @@ i {
 }
 
 /* line 14, sass/_general.scss */
-.valign_top {
+.peon_cont span.inline_element {
+  display: inline-block;
   vertical-align: top;
 }
 
-/* line 19, sass/_general.scss */
+/* line 18, sass/_general.scss */
+.text_rate.inline_element {
+  display: inline-block;
+  vertical-align: sub;
+}
+
+/* line 22, sass/_general.scss */
 .box_item {
   background: #ffffff;
   padding: 30px 35px;
@@ -4487,89 +4537,89 @@ i {
   -ms-box-shadow: 1px 1px 3px 1px rgba(186, 186, 186, 0.5);
   -webkit-box-shadow: 1px 1px 3px 1px rgba(186, 186, 186, 0.5);
 }
-/* line 305, sass/_varfunc.scss */
+/* line 310, sass/_varfunc.scss */
 .box_item .title_info, .box_item p {
   margin: 0;
   color: #6b6b6b;
   font-size: 16px;
   margin-bottom: 10px;
 }
-/* line 312, sass/_varfunc.scss */
+/* line 317, sass/_varfunc.scss */
 .box_item .title_info {
   font-size: 23px;
   font-weight: 400;
   color: #0398e0;
 }
-/* line 318, sass/_varfunc.scss */
+/* line 323, sass/_varfunc.scss */
 .box_item figure {
   width: 14%;
   margin-right: 3%;
 }
-/* line 323, sass/_varfunc.scss */
+/* line 328, sass/_varfunc.scss */
 .box_item .box_item_info {
   width: 83%;
   position: relative;
 }
-/* line 328, sass/_varfunc.scss */
+/* line 333, sass/_varfunc.scss */
 .box_item .box_item_info .pull-left {
   width: 70%;
 }
-/* line 332, sass/_varfunc.scss */
+/* line 337, sass/_varfunc.scss */
 .box_item .box_item_info .pull-left i {
   vertical-align: bottom;
   font-size: calc(23.52941px);
 }
-/* line 337, sass/_varfunc.scss */
+/* line 342, sass/_varfunc.scss */
 .box_item .list-inline, .box_item .list-inline li {
   padding: 0;
   margin: 0;
 }
 
-/* line 23, sass/_general.scss */
+/* line 26, sass/_general.scss */
 .box_item.box_date {
   padding: 50px 70px;
 }
 
-/* line 29, sass/_general.scss */
+/* line 32, sass/_general.scss */
 .star_rate {
   width: 23px;
   vertical-align: top;
 }
-/* line 350, sass/_varfunc.scss */
+/* line 355, sass/_varfunc.scss */
 .star_rate.star_muted i {
   color: #a6a6a6;
 }
-/* line 354, sass/_varfunc.scss */
+/* line 359, sass/_varfunc.scss */
 .star_rate i {
   color: #fdc006;
   display: block;
   font-size: 27px;
 }
 
-/* line 33, sass/_general.scss */
+/* line 36, sass/_general.scss */
 .item_price {
   font-size: calc(1.5 * 23px);
   font-weight: 500;
   color: #0398e0;
 }
-/* line 369, sass/_varfunc.scss */
+/* line 374, sass/_varfunc.scss */
 .item_price span {
   font-size: calc(.8 * 23px);
 }
 
-/* line 37, sass/_general.scss */
+/* line 40, sass/_general.scss */
 .affix_container {
   position: relative;
 }
 
-/* line 41, sass/_general.scss */
+/* line 44, sass/_general.scss */
 .affix_btn_circle {
   position: absolute;
   bottom: 0;
   right: 0;
 }
 
-/* line 47, sass/_general.scss */
+/* line 50, sass/_general.scss */
 .btn_circle {
   background: #0398e0;
   padding: 0;
@@ -4602,7 +4652,7 @@ i {
   font-size: 19px;
 }
 
-/* line 55, sass/_general.scss */
+/* line 58, sass/_general.scss */
 .title_sm {
   margin: 0;
   font-size: 17px;
@@ -4612,7 +4662,7 @@ i {
   margin-bottom: 12px;
 }
 
-/* line 60, sass/_general.scss */
+/* line 63, sass/_general.scss */
 .box_item_comments {
   border-bottom: 1px solid #d4d4d4;
   margin-bottom: 15px;
@@ -4620,17 +4670,34 @@ i {
   padding-bottom: 20px;
 }
 
-/* line 72, sass/_general.scss */
+/* line 70, sass/_general.scss */
+.reviews_cont .title_info {
+  margin: 0;
+  margin-top: 5px;
+}
+
+/* line 76, sass/_general.scss */
+.box_item_comments i {
+  display: inline-block;
+  vertical-align: sub;
+}
+
+/* line 85, sass/_general.scss */
 .peon_cont.element_gap {
   margin-bottom: 15px;
 }
 
-/* line 76, sass/_general.scss */
+/* line 89, sass/_general.scss */
 .reviews_cont.element_gap {
   margin-bottom: 25px;
 }
 
-/* line 81, sass/_general.scss */
+/* line 93, sass/_general.scss */
+.collapse_reviews {
+  margin-top: 20px;
+}
+
+/* line 98, sass/_general.scss */
 .subtitle_content {
   margin: 0;
   font-size: 18px;
@@ -4639,7 +4706,7 @@ i {
   margin-bottom: 10px;
 }
 
-/* line 85, sass/_general.scss */
+/* line 102, sass/_general.scss */
 .title_item {
   margin: 0;
   font-size: 18px;
@@ -4648,34 +4715,44 @@ i {
   margin-bottom: 10px;
 }
 
-/* line 89, sass/_general.scss */
+/* line 106, sass/_general.scss */
 .title_reserve {
   margin: 0;
-  font-size: 30px;
+  font-size: 27px;
   color: #0398e0;
   font-weight: 700;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   text-transform: uppercase;
 }
-/* line 422, sass/_varfunc.scss */
+/* line 427, sass/_varfunc.scss */
 .title_reserve i, .title_reserve span {
   vertical-align: middle;
 }
-/* line 426, sass/_varfunc.scss */
+/* line 431, sass/_varfunc.scss */
 .title_reserve i {
   margin: 0;
-  font-size: 40px;
+  font-size: 34px;
   color: #0398e0;
   font-weight: 0;
   margin-bottom: 0;
 }
 
-/* line 94, sass/_general.scss */
+/* line 111, sass/_general.scss */
+.title_reserve::after {
+  content: '';
+  width: 100%;
+  height: 1px;
+  background: #cccccc;
+  display: block;
+  margin-top: -16px;
+}
+
+/* line 121, sass/_general.scss */
 .title_reserve.element_gap {
   margin-bottom: 55px;
 }
 
-/* line 98, sass/_general.scss */
+/* line 125, sass/_general.scss */
 .comment_user {
   height: 65px;
   padding-left: calc(65px / 2);
@@ -4689,34 +4766,44 @@ i {
   min-height: 160px;
 }
 
-/* line 106, sass/_general.scss */
+/* line 133, sass/_general.scss */
 .input_lg {
   height: 60px;
   padding-left: calc(60px / 2);
 }
 
-/* line 110, sass/_general.scss */
-.date_form input,
-.date_form textarea {
+/* line 138, sass/_general.scss */
+.date_form .row.clearfix {
+  margin-bottom: 40px;
+}
+
+/* line 143, sass/_general.scss */
+.date_form .form-group.col-md-6 {
+  margin-bottom: 35px;
+}
+
+/* line 147, sass/_general.scss */
+.date_form input.form-control,
+.date_form textarea.form-control {
   margin: 0;
-  font-size: 20px;
+  font-size: 19px;
   color: #6b6b6b;
   font-weight: 400;
   margin-bottom: 0px;
+  width: 100%;
 }
 
-/* line 115, sass/_general.scss */
+/* line 153, sass/_general.scss */
 .date_form label,
 .date_form label.inline_label {
-  padding-top: 15px;
   margin: 0;
-  font-size: 22px;
+  font-size: 21px;
   color: #6b6b6b;
-  font-weight: 600;
-  margin-bottom: 10px;
+  font-weight: 500;
+  margin-bottom: 5px;
 }
 
-/* line 121, sass/_general.scss */
+/* line 158, sass/_general.scss */
 #datepickerContainer {
   border: 1px solid #cccccc;
   padding: 15px;
@@ -4754,7 +4841,7 @@ i {
 .main_navbar {
   margin-bottom: 0;
 }
-/* line 210, sass/_varfunc.scss */
+/* line 215, sass/_varfunc.scss */
 .main_navbar i {
   color: #eeeeee;
   font-size: 40px;
@@ -4817,7 +4904,7 @@ i {
 #search_input input:-ms-input-placeholder {
   color: #ffffff;
 }
-/* line 224, sass/_varfunc.scss */
+/* line 229, sass/_varfunc.scss */
 #search_input input {
   border: 1px solid #ffffff;
   background-color: transparent;
@@ -4826,7 +4913,7 @@ i {
   font-size: 23px;
   color: #ffffff;
 }
-/* line 233, sass/_varfunc.scss */
+/* line 238, sass/_varfunc.scss */
 #search_input .input-group-addon {
   position: absolute;
   right: 0;
@@ -4842,7 +4929,7 @@ i {
   top: 50%;
   transform: translate(0, -50%);
 }
-/* line 247, sass/_varfunc.scss */
+/* line 252, sass/_varfunc.scss */
 #search_input .input-group-addon i {
   border: none;
   color: #ffffff;
@@ -4860,28 +4947,28 @@ i {
   margin-bottom: 70px;
   position: relative;
 }
-/* line 265, sass/_varfunc.scss */
+/* line 270, sass/_varfunc.scss */
 .bkg_header .cont_filter {
   margin-top: calc(25% - 175px);
 }
-/* line 269, sass/_varfunc.scss */
+/* line 274, sass/_varfunc.scss */
 .bkg_header .cont_filter .btn-default {
   height: 60px;
   font-size: 23px;
   padding: 15px;
 }
-/* line 275, sass/_varfunc.scss */
+/* line 280, sass/_varfunc.scss */
 .bkg_header h1, .bkg_header h2 {
   margin: 0;
 }
-/* line 279, sass/_varfunc.scss */
+/* line 284, sass/_varfunc.scss */
 .bkg_header .cont_filter .main_tittle {
   font-size: calc(1.7 * 23px);
   margin-bottom: 10px;
   color: #ffffff;
   font-weight: 700;
 }
-/* line 286, sass/_varfunc.scss */
+/* line 291, sass/_varfunc.scss */
 .bkg_header .cont_filter .main_subtittle {
   font-size: calc(1.1 * 23px);
   color: #ffffff;
@@ -4893,17 +4980,17 @@ i {
   color: #777777;
   margin: 100px 0 40px 0;
 }
-/* line 379, sass/_varfunc.scss */
+/* line 384, sass/_varfunc.scss */
 .footer .list_group li {
   padding-left: 15px;
   padding-right: 15px;
   margin-bottom: 10px;
 }
-/* line 385, sass/_varfunc.scss */
+/* line 390, sass/_varfunc.scss */
 .footer .list_group a {
   color: #222222;
 }
-/* line 389, sass/_varfunc.scss */
+/* line 394, sass/_varfunc.scss */
 .footer span {
   color: #a6a6a6;
   font-size: 14px;

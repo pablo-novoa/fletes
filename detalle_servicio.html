@@ -110,7 +110,7 @@
 					<div>
 						<div class="element_gap peon_cont">
 							<input type="checkbox">
-							<span class="valign_top">Ayuda para manipular los bultos</span>
+							<span class="inline_element">Ayuda para manipular los bultos</span>
 						</div>
 					</div>
 				</div>
@@ -139,16 +139,27 @@
 
 		<article class="box_item clearfix">
 			<div class="box_comments">
-				<div class="pull-left">
-					<div class="element_gap reviews_cont clearfix">
+				<!-- <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseReviews" aria-expanded="false" aria-controls="collapseReviews">Open file</a>
+				<div class="collapse" id="collapseExample">
+  					
+    				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    			
+				</div> -->
+
+			
+					<div class="reviews_cont clearfix">
 						<h3 class="title_info pull-left">Opiniones sobre este servicio</h3>
 						<div class="pull-right">
-							<a href="#" class="btn btn_circle circle_sm block">
+							<a href="#collapseReviews" class="btn btn_circle circle_sm block" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapseReviews">
 								<i class="material-icons">&#xE145;</i>
 							</a>
 						</div>
 					</div>
-					<section class="row">
+					<section id="collapseReviews" class="collapse_reviews row collapse in">
 						<article class="col-md-12">
 							<div class="box_item_comments">
 								<div>
@@ -213,29 +224,31 @@
   								<label class="title_item pull-left block" for="exampleInputEmail3">Deja un comentario acerca del servicio</label>
 								<textarea class="element_gap form-group comment_user form-control" placeholder="Que te parecio?"></textarea>
 							</div>
-							<ul class="list-inline">
-								<span>Puntuar servicio</span>
-								<li class="star_rate star_muted">
-									<i class="material-icons">star_rate</i>
-								</li>
-								<li class="star_rate star_muted">
-									<i class="material-icons">star_rate</i>
-								</li>
-								<li class="star_rate star_muted">
-									<i class="material-icons">star_rate</i>
-								</li>
-								<li class="star_rate star_muted">
-									<i class="material-icons">star_rate</i>
-								</li>
-								<li class="star_rate star_muted">
-									<i class="material-icons">star_rate</i>
-								</li>
-							</ul>
-							<a href="#" class="btn btn-md btn-default pull-right">Publicar opinión</a>
+							<div class="clearfix">
+								<ul class="list-inline pull-left">
+									<span class="text_rate inline_element">Puntuar servicio</span>
+									<li class="star_rate star_muted">
+										<i class="material-icons">star_rate</i>
+									</li>
+									<li class="star_rate star_muted">
+										<i class="material-icons">star_rate</i>
+									</li>
+									<li class="star_rate star_muted">
+										<i class="material-icons">star_rate</i>
+									</li>
+									<li class="star_rate star_muted">
+										<i class="material-icons">star_rate</i>
+									</li>
+									<li class="star_rate star_muted">
+										<i class="material-icons">star_rate</i>
+									</li>
+								</ul>
+								<a href="#" class="btn btn-md btn-default pull-right">Publicar opinión</a>
+							</div>
 						</div>
 					</section>
 
-				</div>
+			
 			</div>
 		</article>
 

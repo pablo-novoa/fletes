@@ -11,10 +11,13 @@ i {
   display: block !important;
 }
 
-.valign_top {
-	vertical-align:top;
+.peon_cont span.inline_element {
+	@include inline-element(top);
 }
 
+.text_rate.inline_element {
+	@include inline-element(sub);
+}
 
 .box_item {
 	@include box-item-info;
@@ -64,6 +67,16 @@ i {
     padding-bottom: 20px;
 }
 
+.reviews_cont .title_info {
+	margin:0;
+	@include element-gap(margin-top, 5px);
+
+}
+
+.box_item_comments i {
+	@include inline-element(sub);
+}
+
 // .box_item_comments:last-child {
 // 	border-bottom:none;
 // }
@@ -75,6 +88,10 @@ i {
 
 .reviews_cont.element_gap {
 	@include element-gap(margin-bottom, 25px);
+}
+
+.collapse_reviews {
+	@include element-gap(margin-top, 20px);
 }
 
 
@@ -89,6 +106,16 @@ i {
 .title_reserve {
 	@include title-reserve;
 	text-transform:uppercase;
+}
+
+.title_reserve::after {
+	content:'';
+    width: 100%;
+    height: 1px;
+    background: #cccccc;
+    display: block;
+    margin-top: -16px;
+
 }
 
 .title_reserve.element_gap {
@@ -107,15 +134,25 @@ i {
 	@include input-type(60px);
 }
 
-.date_form input,
-.date_form textarea {	
-	@include title-type(20px, #6b6b6b, 400, 0px);
+
+.date_form .row.clearfix {
+	@include element-gap(margin-bottom, 40px);
+}
+
+
+.date_form .form-group.col-md-6 {
+	@include element-gap(margin-bottom, 35px);	
+}
+
+.date_form input.form-control,
+.date_form textarea.form-control {	
+	@include title-type(19px, #6b6b6b, 400, 0px);
+	width:100%;
 }
 
 .date_form label,
 .date_form label.inline_label {
-    @include element-gap(padding-top, 15px);
-    @include title-type(22px, #6b6b6b, 600, 10px);
+    @include title-type(21px, #6b6b6b, 500, 5px);
 }
 
 #datepickerContainer {
